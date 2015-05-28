@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[SHR_STP_Object]
+(
+[ObjectID] [int] NOT NULL IDENTITY(1, 1),
+[ObjectName] [nvarchar] (60) COLLATE Latin1_General_100_CS_AS NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[SHR_STP_Object] ADD CONSTRAINT [PK_SHR_STP_Object] PRIMARY KEY CLUSTERED  ([ObjectID]) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_SHR_STP_Object] ON [dbo].[SHR_STP_Object] ([ObjectName]) ON [PRIMARY]
+GO
