@@ -1,13 +1,5 @@
 SET IDENTITY_INSERT [dbo].[SHR_STP_Object] ON
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (275, N'Site Location')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (276, N'None given')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (277, N'Other')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (278, N'Meetings')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (279, N'N/A')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (280, N'Legal Name')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (281, N'Dates')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (282, N'Agency Location')
-INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (283, N'PO Box')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (284, N'Service Location')
 SET IDENTITY_INSERT [dbo].[SHR_STP_Object] OFF
 SET IDENTITY_INSERT [dbo].[SHR_STP_Object] ON
 INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (0, N'Unknown')
@@ -281,4 +273,13 @@ INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (271, N'Pub
 INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (272, N'Paused')
 INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (273, N'In progress')
 INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (274, N'Topic Search')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (275, N'Site Location')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (276, N'None given')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (277, N'Other')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (278, N'Meetings')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (279, N'N/A')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (280, N'Legal Name')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (281, N'Dates')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (282, N'Agency Location')
+INSERT INTO [dbo].[SHR_STP_Object] ([ObjectID], [ObjectName]) VALUES (283, N'PO Box')
 SET IDENTITY_INSERT [dbo].[SHR_STP_Object] OFF
