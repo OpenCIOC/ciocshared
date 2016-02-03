@@ -38,7 +38,7 @@ SELECT a.AgencyCode,
 				)
 		WHERE Inactive=0 AND Agency=a.AgencyCode) AS UserTaxonomyCount,
 	(SELECT COUNT(*) FROM GBL_BaseTable bt WHERE bt.RECORD_OWNER=a.AgencyCode AND EXISTS(SELECT * FROM GBL_BaseTable_Description btd WHERE btd.NUM=bt.NUM AND btd.DELETION_DATE IS NULL)) AS CICRecordCount,
-	(SELECT COUNT(*) FROM VOL_Opportunity vo WHERE vo.RECORD_OWNER=a.AgencyCode AND (vo.DISPLAY_UNTIL IS NULL OR vo.DISPLAY_UNTIL > GETDATE()) AND EXISTS(SELECT * FROM VOL_Opportunity_Description vod WHERE vod.VNUM=vo.VNUM AND vod.DELETION_DATE IS NULL)) AS VOLRecordCount,
+	(SELECT COUNT(*) FROM VOL_Opportunity vo WHERE vo.RECORD_OWNER=a.AgencyCode AND (vo.DISPLAY_UNTIL IS NULL OR vo.DISPLAY_UNTIL > GETDATE()) AND EXISTS(SELECT * FROM VOL_Opportunity_Description vod WHERE vod.OP_ID=vo.OP_ID AND vod.DELETION_DATE IS NULL)) AS VOLRecordCount,
 	btd.ORG_LEVEL_1, btd.ORG_LEVEL_2, btd.ORG_LEVEL_3, btd.ORG_LEVEL_4, btd.ORG_LEVEL_5
 FROM GBL_Agency a
 LEFT JOIN GBL_BaseTable_Description btd
