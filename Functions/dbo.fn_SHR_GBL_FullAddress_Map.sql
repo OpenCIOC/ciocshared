@@ -16,7 +16,7 @@ DECLARE	@returnStr varchar(max)
 SET @returnStr = @MailAddress
 
 IF @returnStr IS NOT NULL AND @Latitude IS NOT NULL AND @Longitude IS NOT NULL BEGIN
-	SET @returnStr = '<div style="float:left;">' + REPLACE(@returnStr, CHAR(13) + CHAR(10), '<br>') + '</div><div id="map_canvas" class="NotVisible DetailsMapCanvas" latitude="' + CAST(@Latitude AS varchar) + '" longitude="' + CAST(@Longitude AS varchar) + '"></div>'
+	SET @returnStr = '<div class="address-mapped">' + REPLACE(@returnStr, CHAR(13) + CHAR(10), '<br>') + '</div><div id="map_canvas" class="NotVisible DetailsMapCanvas" latitude="' + CAST(@Latitude AS varchar) + '" longitude="' + CAST(@Longitude AS varchar) + '"></div>'
 END
 
 IF @returnStr = '' SET @returnStr = NULL
