@@ -19,4 +19,7 @@ END
 RETURN @returnStr
 END
 
+
+GO
+GRANT EXECUTE ON  [dbo].[fn_SHR_GBL_TimeString] TO [cioc_login_role]
 GO
