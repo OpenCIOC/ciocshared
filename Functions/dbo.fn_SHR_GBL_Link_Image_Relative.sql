@@ -2,8 +2,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-CREATE FUNCTION [dbo].[fn_SHR_GBL_Link_Image_Relative](@ImgURL [varchar](200), @ImgLink [varchar](200), @ImgID [varchar](50))
-RETURNS [varchar](500) WITH EXECUTE AS CALLER
+CREATE FUNCTION [dbo].[fn_SHR_GBL_Link_Image_Relative](@ImgURL [varchar](255), @ImgLink [varchar](255), @ImgID [varchar](50))
+RETURNS [varchar](600) WITH EXECUTE AS CALLER
 AS 
 BEGIN 
 DECLARE @returnStr varchar(500)

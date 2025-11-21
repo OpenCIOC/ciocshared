@@ -2,18 +2,20 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-CREATE FUNCTION [dbo].[fn_SHR_GBL_Link_Image](@ImgURL [varchar](200), @ImgLink [varchar](200), @ImgID [varchar](50))
+CREATE FUNCTION [dbo].[fn_SHR_GBL_Link_Image](@ImgURL [varchar](255), @ImgLink [varchar](255), @ImgID [varchar](50))
 RETURNS [varchar](500) WITH EXECUTE AS CALLER
 AS 
 BEGIN 
 DECLARE @returnStr varchar(500)
 
+/** DEPRECATED?? */
+
 IF @ImgURL IS NULL BEGIN
 	SET @returnStr = NULL
 END ELSE BEGIN
-	SET @returnStr = '<img src="http://' + @ImgURL + '" border="0"' + CASE WHEN @ImgID IS NULL THEN '' ELSE ' id="' + @ImgID + '"' END + '>'
+	SET @returnStr = '<img src="https://' + @ImgURL + '" border="0"' + CASE WHEN @ImgID IS NULL THEN '' ELSE ' id="' + @ImgID + '"' END + '>'
 	IF @ImgLink IS NOT NULL
-		SET @returnStr = '<a href="http://' + @ImgLink + '">' + @returnStr + '</a>'
+		SET @returnStr = '<a href="https://' + @ImgLink + '">' + @returnStr + '</a>'
 END
 
 RETURN @returnStr

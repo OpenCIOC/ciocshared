@@ -24,6 +24,9 @@ RETURN ISNULL(@returnStr,@ObjectName)
 END
 
 
+
 GO
 GRANT EXECUTE ON  [dbo].[fn_SHR_STP_ObjectName_Lang] TO [cioc_login_role]
+GO
+GRANT EXECUTE ON  [dbo].[fn_SHR_STP_ObjectName_Lang] TO [cioc_maintenance_role]
 GO

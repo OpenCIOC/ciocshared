@@ -11,16 +11,8 @@ CREATE FUNCTION [dbo].[fn_SHR_CIC_Link_Publication](
 RETURNS nvarchar(max) WITH EXECUTE AS CALLER
 AS 
 
-/*
-	Checked for Release: 3.1
-	Checked by: KL
-	Checked on: 03-Jan-2012
-	Action: NO ACTION REQUIRED
-*/
-
-
 BEGIN 
-RETURN '<A HREF="' + @PathToStart + 'bresults.asp?PBID=' + CAST(@PB_ID AS varchar) + CASE WHEN @HTTPVals IS NOT NULL THEN '&' + @HTTPVals ELSE '' END + '">' + @PubName + '</A>'
+RETURN '<a href="' + @PathToStart + 'bresults.asp?PBID=' + CAST(@PB_ID AS varchar) + CASE WHEN @HTTPVals IS NOT NULL THEN '&' + @HTTPVals ELSE '' END + '">' + @PubName + '</a>'
 END
 
 

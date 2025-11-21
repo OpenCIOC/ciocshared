@@ -12,9 +12,9 @@ DECLARE @returnStr varchar(500)
 IF @ImgURL IS NULL BEGIN
 	SET @returnStr = NULL
 END ELSE BEGIN
-	SET @returnStr = '<img src="' + CASE WHEN @ImgURLProtocol IS NULL THEN 'http://' ELSE @ImgURLProtocol END + @ImgURL + '" border="0"' + CASE WHEN @ImgClass IS NULL THEN '' ELSE ' class="' + @ImgClass + '"' END + '>'
+	SET @returnStr = '<img src="' + CASE WHEN @ImgURLProtocol IS NULL THEN 'https://' ELSE @ImgURLProtocol END + @ImgURL + '" border="0"' + CASE WHEN @ImgClass IS NULL THEN '' ELSE ' class="' + @ImgClass + '"' END + '>'
 	IF @ImgLink IS NOT NULL
-		SET @returnStr = '<a href="' + CASE WHEN @ImgLinkProtocol IS NULL THEN 'http://' ELSE @ImgLinkProtocol END + @ImgLink + '">' + @returnStr + '</a>'
+		SET @returnStr = '<a href="' + CASE WHEN @ImgLinkProtocol IS NULL THEN 'https://' ELSE @ImgLinkProtocol END + @ImgLink + '">' + @returnStr + '</a>'
 END
 
 RETURN @returnStr

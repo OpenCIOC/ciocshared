@@ -18,8 +18,15 @@ IF @returnStr IS NULL SET @returnStr = ''
 
 IF @returnStr <> '' SET @returnStr = dbo.fn_SHR_STP_ObjectName('Ages') + dbo.fn_SHR_STP_ObjectName(': ') + @returnStr
 IF @Eligibility <> '' AND @Eligibility IS NOT NULL BEGIN
-	IF @returnStr <> '' SET @returnStr = @returnStr + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)
-	SET @returnStr = @returnStr + @Eligibility
+	IF @returnStr <> '' BEGIN
+		SET @returnStr = 
+			CASE WHEN @Eligibility LIKE '<%>'
+				THEN '<p>' + @returnStr + '</p>' + @Eligibility
+				ELSE @returnStr + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10) + @Eligibility
+			END
+	END ELSE BEGIN
+		SET @returnStr = @Eligibility
+	END
 END
 
 IF @returnStr = '' SET @returnStr = NULL
